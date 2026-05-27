@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('couriers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('phone_number')->unique();
+            $table->string('vehicle_type');
+            $table->string('vehicle_plate')->unique();
+            $table->tinyInteger('level')->default(1); // 1-5
+            $table->boolean('is_active')->default(true);
+            $table->timestamp('joined_at')->nullable();
             $table->timestamps();
         });
     }
