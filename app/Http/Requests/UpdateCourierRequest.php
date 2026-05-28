@@ -24,10 +24,10 @@ class UpdateCourierRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|required|string|max:255',
-            'email' => 'sometimes|required|string|email|max:255|unique:couriers,email,' . $this->route('id'),
-            'phone_number' => 'sometimes|required|string|max:20|unique:couriers,phone_number,' . $this->route('id'),
+            'email' => 'sometimes|required|string|email|max:255|unique:couriers,email,' . $this->route('courier'),
+            'phone_number' => 'sometimes|required|string|max:20|unique:couriers,phone_number,' . $this->route('courier'),
             'vehicle_type' => 'sometimes|required|string|max:50',
-            'vehicle_plate' => 'sometimes|required|string|max:20|unique:couriers,vehicle_plate,' . $this->route('id'),
+            'vehicle_plate' => 'sometimes|required|string|max:20|unique:couriers,vehicle_plate,' . $this->route('courier'),
             'level' => 'sometimes|required|integer|min:1|max:5',
         ];
     }
